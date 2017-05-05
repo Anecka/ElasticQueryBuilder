@@ -25,6 +25,14 @@ class Query implements JsonSerializable
     private $properties = [];
 
     /**
+     * Constructor for fluent chaining
+     */
+    public function __construct()
+    {
+        return $this;
+    }
+
+    /**
      * Create nested objects and set its value.
      *
      * @param string $field The attribute
