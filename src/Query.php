@@ -69,7 +69,7 @@ class Query implements JsonSerializable
      * @param  mixed $args      value
      * @return mixed
      */
-    public function __callStatic($method, $args)
+    public static function __callStatic($method, $args)
     {
         $model = get_called_class();
 
