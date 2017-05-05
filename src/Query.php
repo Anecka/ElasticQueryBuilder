@@ -63,6 +63,20 @@ class Query implements JsonSerializable
     }
 
     /**
+     * Call statically for prettier code
+     * 
+     * @param  string $method   method we want to call
+     * @param  mixed $args      value
+     * @return mixed
+     */
+    public function __callStatic($method, $args)
+    {
+        $model = get_called_class();
+
+        return call_user_func_array([new $model, $method], $args);
+    }
+
+    /**
      * @return stdClass
      */
     public function jsonSerialize()
